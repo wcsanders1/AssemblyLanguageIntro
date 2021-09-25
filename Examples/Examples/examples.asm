@@ -3,10 +3,14 @@
 .stack 4096
 ExitProcess PROTO, dwExitCode:DWORD
 
+.data
+nums DWORD 01h, 02h, 03h, 04h, 05h, 06h, 07h, 08h
+
 .code
 main PROC
 	call addFourNumbers
 	call getFibonacciOf7
+	call reverseArray
 
 	INVOKE ExitProcess,0
 
@@ -40,5 +44,25 @@ getFibonacciOf7:
 		loop	fibonacci
 
 	ret
+
+reverseArray:
+	mov		eax, 0	; front pointer
+	mov		ebx, offset [LENGTHOF nums * TYPE nums - TYPE nums]	; back pointer
+	mov		ecx, offset [LENGTHOF nums / 2]
+	mov		edx, 0	; holds front value
+	mov		esi, 0	; holds back value
+
+reverse:
+	mov		edx, [nums + eax]
+	mov		esi, [nums + ebx]
+	mov		[nums + eax], esi
+	mov		[nums + ebx], edx
+
+	add		eax, TYPE nums
+	sub		ebx, TYPE nums
+	loop	reverse
+
+	ret
+
 main ENDP
 END main
