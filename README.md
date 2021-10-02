@@ -6,7 +6,11 @@ This presentation will demonstrate how to set up a project in Visual Studio to w
 
 ## What is assembly language?
 
-Assembly language is a low-level programming language with a nearly one-to-one correspondence with the computer's machine code instructions. It is mostly a set of mnemonic codes referring to machine codes. Assembly language is converted into machine code by an assembler, whereas higher-level languages like C# are compiled by a compiler, which may make decisions on its own based on the entirety of the program.
+Assembly language is a low-level programming language with a one-to-one correspondence with the processor's machine code instructions. It is mostly a set of mnemonic codes referring to machine codes. Assembly language is converted into machine code by an assembler, whereas higher-level languages like C# are compiled by a compiler, which may make decisions on its own based on the entirety of the program. Also, because of the correspondence between assembly language mnemonics and processor instructions, assembly language programs for one processor will likely not run on a different processor.
+
+## Why explore assembly language?
+
+Writing programs in assembly language reveals the amount of instructions and detail required to make a computer do even seemingly simple tasks. Modern high-level languages extract much of this detail away, so programming in a high-level language can cause a programmer to take for granted how much the compiler is actually doing. Also, programming in assembly language can help a programmer understand how memory works, which may offer insight into problems faced when programming at a higher level.
 
 ## Setting up a Visual Studio project to write assembly
 
